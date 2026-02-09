@@ -1,0 +1,32 @@
+{
+	"name": "claude-optic",
+	"version": "0.1.0",
+	"description": "Zero-dependency, local-first framework for reading Claude Code session data from ~/.claude/",
+	"type": "module",
+	"exports": {
+		".": "./src/index.ts"
+	},
+	"bin": {
+		"claude-optic": "./src/cli/index.ts"
+	},
+	"files": ["src", "examples"],
+	"keywords": [
+		"claude",
+		"claude-code",
+		"session-history",
+		"developer-tools",
+		"productivity"
+	],
+	"author": "Kristoffer",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Kristoffer88/claude-optic"
+	},
+	"engines": {
+		"bun": ">=1.0.0"
+	},
+	"devDependencies": {
+		"@types/bun": "^1.2.2"
+	}
+}
