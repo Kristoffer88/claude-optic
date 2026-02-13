@@ -18,8 +18,6 @@ bunx claude-optic sessions
 - **No network access**
 - **Privacy by default** — strips tool results and thinking blocks
 - **Two-tier session loading** — fast (`history.jsonl`) or detailed (full parse)
-- **Streaming JSONL parsing**
-- **Cost estimation**
 - **Bun-native** — `Bun.file()`, `Bun.Glob`
 
 ## Install
