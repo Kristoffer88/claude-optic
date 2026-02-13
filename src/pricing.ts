@@ -10,20 +10,24 @@ export interface ModelPricing {
 
 /** Current Claude model pricing (USD per million tokens). */
 export const MODEL_PRICING: Record<string, ModelPricing> = {
-	// Opus
-	"claude-opus-4-5-20250514": { input: 15, output: 75, cacheWrite: 18.75, cacheRead: 1.5 },
-	"claude-opus-4-6": { input: 15, output: 75, cacheWrite: 18.75, cacheRead: 1.5 },
+	// Opus 4.5+ ($5/$25)
+	"claude-opus-4-6": { input: 5, output: 25, cacheWrite: 6.25, cacheRead: 0.5 },
+	"claude-opus-4-5-20250514": { input: 5, output: 25, cacheWrite: 6.25, cacheRead: 0.5 },
 
-	// Sonnet
+	// Opus 4.0–4.1 ($15/$75)
+	"claude-opus-4-1-20250514": { input: 15, output: 75, cacheWrite: 18.75, cacheRead: 1.5 },
+	"claude-opus-4-0-20250514": { input: 15, output: 75, cacheWrite: 18.75, cacheRead: 1.5 },
+
+	// Sonnet ($3/$15)
 	"claude-sonnet-4-5-20250929": { input: 3, output: 15, cacheWrite: 3.75, cacheRead: 0.3 },
 	"claude-sonnet-4-5-20250514": { input: 3, output: 15, cacheWrite: 3.75, cacheRead: 0.3 },
 	"claude-sonnet-4-0-20250514": { input: 3, output: 15, cacheWrite: 3.75, cacheRead: 0.3 },
 
-	// Haiku
-	"claude-haiku-4-5-20251001": { input: 0.8, output: 4, cacheWrite: 1, cacheRead: 0.08 },
-	"claude-haiku-3-5-20241022": { input: 0.8, output: 4, cacheWrite: 1, cacheRead: 0.08 },
+	// Haiku 4.5 ($1/$5)
+	"claude-haiku-4-5-20251001": { input: 1, output: 5, cacheWrite: 1.25, cacheRead: 0.1 },
 
 	// Legacy
+	"claude-haiku-3-5-20241022": { input: 0.8, output: 4, cacheWrite: 1, cacheRead: 0.08 },
 	"claude-3-5-sonnet-20241022": { input: 3, output: 15, cacheWrite: 3.75, cacheRead: 0.3 },
 	"claude-3-5-sonnet-20240620": { input: 3, output: 15, cacheWrite: 3.75, cacheRead: 0.3 },
 	"claude-3-5-haiku-20241022": { input: 0.8, output: 4, cacheWrite: 1, cacheRead: 0.08 },
