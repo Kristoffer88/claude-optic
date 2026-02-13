@@ -6,6 +6,12 @@ Zero-dependency, local-first TypeScript library for reading [Claude Code](https:
 
 > **Security Warning**: `~/.claude/` contains highly sensitive data — API keys, source code, credentials, and personal information have been found in plaintext in session files. This library is designed with privacy as the primary concern. See [SECURITY.md](./SECURITY.md).
 
+## Try it
+
+```bash
+bunx claude-optic sessions
+```
+
 ## Features
 
 - **Zero runtime dependencies** — every dependency is an attack surface
