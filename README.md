@@ -117,6 +117,29 @@ Aggregated work pattern metrics as JSON — hour distribution, late-night/weeken
 bun examples/work-patterns.ts | claude "analyze my work patterns and suggest improvements"
 ```
 
+### Commit Tracker
+
+Post-commit hook that records AI usage per commit to `.ai-usage.jsonl`.
+
+```bash
+# Install the git hook
+bun examples/commit-tracker.ts install
+
+# Or run manually for the latest commit
+bun examples/commit-tracker.ts run
+```
+
+Each commit gets a JSONL record with matched sessions, token counts, and cost:
+
+```json
+{"commit":"7c5a457","timestamp":"2026-02-13T21:12:13.000Z","branch":"main","sessions":2,"tokens":{"input":194,"output":1638,"cache_read":1534390,"cache_write":83203},"cost_usd":1.33,"models":["claude-opus-4-6"],"messages":89,"files_changed":2}
+```
+
+```bash
+# Uninstall when done
+bun examples/commit-tracker.ts uninstall
+```
+
 ### Pipe Match
 
 Generic stdin matcher — pipe in any JSON with timestamps, match against sessions.
@@ -222,8 +245,8 @@ const session = (await ch.sessions.listWithMeta())[0];
 const cost = estimateCost(session); // USD
 
 // Look up pricing for a model
-const pricing = getModelPricing("claude-opus-4-5-20250514");
-// { input: 15, output: 75, cacheWrite: 18.75, cacheRead: 1.5 } per million tokens
+const pricing = getModelPricing("claude-opus-4-6");
+// { input: 5, output: 25, cacheWrite: 6.25, cacheRead: 0.5 } per million tokens
 ```
 
 ### Filters
