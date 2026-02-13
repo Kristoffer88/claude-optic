@@ -30,7 +30,7 @@ export function redactString(text: string, config: PrivacyConfig): string {
 }
 
 /** Filter content blocks according to privacy config. */
-export function filterContentBlocks(
+function filterContentBlocks(
 	blocks: ContentBlock[],
 	config: PrivacyConfig,
 ): ContentBlock[] {

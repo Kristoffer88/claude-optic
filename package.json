@@ -23,10 +23,14 @@
 		"type": "git",
 		"url": "https://github.com/Kristoffer88/claude-optic"
 	},
+	"scripts": {
+		"knip": "knip"
+	},
 	"engines": {
 		"bun": ">=1.0.0"
 	},
 	"devDependencies": {
-		"@types/bun": "^1.2.2"
+		"@types/bun": "^1.2.2",
+		"knip": "^5.83.1"
 	}
 }

@@ -96,19 +96,3 @@ export async function* streamTranscript(
 		}
 	}
 }
-
-/**
- * Read all transcript entries from a session JSONL file.
- */
-export async function readTranscript(
-	sessionId: string,
-	projectPath: string,
-	projectsDir: string,
-	privacy: PrivacyConfig,
-): Promise<TranscriptEntry[]> {
-	const entries: TranscriptEntry[] = [];
-	for await (const entry of streamTranscript(sessionId, projectPath, projectsDir, privacy)) {
-		entries.push(entry);
-	}
-	return entries;
-}
